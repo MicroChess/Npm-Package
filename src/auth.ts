@@ -11,7 +11,7 @@ export class Authenticator {
     \\-----------------------------------------------------------------------------------*/
 
     public async loginWithGoogle(google_oauth_token: string) {
-        const res = await fetch(`${this.server.api_url}/v1/auth/login/google`, {
+        const res = await fetch(`${this.server.api_url}/v1/auth/authorize/google`, {
             method: "POST",
             body: "Data sent as headers",
             headers: {
