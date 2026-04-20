@@ -58,7 +58,21 @@ export class AuthKey {
 
 export class RegistrationHook {
     constructor(
-        public verify_email: (otp_code: string) => Promise<AuthKey>,
-        public resend_email: () => Promise<void>,
+        public verifyEmail: (otp_code: string) => Promise<AuthKey>,
+        public resendEmail: () => Promise<void>,
+    ) {}
+}
+
+export class PasswordResetHook {
+    constructor(
+        public confirmPassword: (otp_code: string) => Promise<void>,
+        public resendEmail:     () => Promise<void>,
+    ) {}
+}
+
+export class AccountDeletionHook {
+    constructor(
+        public confirmDeletion: (otp_code: string) => Promise<void>,
+        public resendEmail:     () => Promise<void>,
     ) {}
 }
