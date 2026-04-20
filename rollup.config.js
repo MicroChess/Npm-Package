@@ -13,7 +13,11 @@ export default [
     },
     {
         input: 'src/cli.ts',
-        output: { file: 'dist/cli.js', format: 'cjs', banner: '#!/usr/bin/env node' },
+        output: { 
+            file: 'dist/cli.js', 
+            format: 'cjs', 
+            banner: '#!/usr/bin/env node' 
+        },
         plugins: [resolve(), commonjs(), typescript()]
     }
 ];
